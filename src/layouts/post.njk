@@ -11,7 +11,7 @@ eleventyComputed:
       "headline": {{ title | dump | safe }},
       "datePublished": "{{ page.date | isoDate }}",
       "dateModified": "{{ page.date | isoDate }}",
-      "author": { "@type": "Organization", "name": "Improv Lore" },
+      "author": {% if author %}{ "@type": "Person", "name": {{ author | dump | safe }}{% if authorUrl %}, "url": {{ authorUrl | dump | safe }}{% endif %} }{% else %}{ "@type": "Organization", "name": "Improv Lore" }{% endif %},
       "publisher": {
         "@type": "Organization",
         "name": "Improv Lore",
@@ -27,8 +27,6 @@ eleventyComputed:
 {% set canonicalUrl = page.url %}
 
 <article class="events-root post">
-  <a class="post-back" href="/">← All posts</a>
-
   {% if cover %}
   <figure class="post-cover">
     <img src="{{ cover }}" alt="{{ coverAlt or title }}" loading="eager" fetchpriority="high"{% if 'http' in cover %} eleventy:ignore{% endif %}>
@@ -48,6 +46,12 @@ eleventyComputed:
     <h1 class="post-title">{{ title }}</h1>
 
     <p class="post-meta">
+      {% if author %}
+      <span class="post-author">Written by
+        {% if authorUrl %}<a class="post-author-link" href="{{ authorUrl }}"{% if 'http' in authorUrl %} target="_blank" rel="noopener"{% endif %}>{{ author }}</a>{% else %}{{ author }}{% endif %}
+      </span>
+      <span class="post-meta-sep" aria-hidden="true">·</span>
+      {% endif %}
       <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
       <span class="post-meta-sep" aria-hidden="true">·</span>
       <span>{{ content | readingTime }} min read</span>
@@ -60,5 +64,6 @@ eleventyComputed:
 
   <footer class="post-footer">
     <a class="btn btn-primary" href="/">← Back to all posts</a>
+    <a class="btn btn-secondary" href="{{ site.mainSite }}/events/" target="_blank" rel="noopener">Check out our upcoming events →</a>
   </footer>
 </article>

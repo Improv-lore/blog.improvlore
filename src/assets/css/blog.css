@@ -132,6 +132,16 @@
   opacity: 0.6;
 }
 
+.post-author-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-author-link:hover {
+  color: var(--text-body);
+}
+
 .post-card-excerpt {
   font-size: 0.92rem;
   line-height: 1.55;
@@ -210,23 +220,6 @@
   .post.events-root {
     max-width: 1000px;
   }
-}
-
-.post-back {
-  display: inline-block;
-  margin-bottom: 1.4rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.post-back:hover {
-  color: var(--ink);
-  border-bottom-color: var(--yellow);
 }
 
 .post-cover {
@@ -341,6 +334,16 @@
 .post-body h3 { font-size: 1.3rem; }
 .post-body h4 { font-size: 1.1rem; }
 
+/* Event-date line (a paragraph written as `@ Wed, 17th June.`). Sits tight
+   under its event heading and reads as a small muted caption rather than body
+   copy. Opt-in via the `@` marker, so ordinary paragraphs are unaffected. */
+.post-body .event-date {
+  margin-top: 0.3rem;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 .post-body a {
   color: var(--blue);
   font-weight: 600;
@@ -351,6 +354,43 @@
 
 .post-body a:hover {
   border-bottom-color: var(--blue);
+}
+
+/* Links inside headings inherit the heading's ink instead of going blue, so
+   the event titles read as titles; the underline keeps them clearly clickable. */
+.post-body h2 a,
+.post-body h3 a,
+.post-body h4 a {
+  color: inherit;
+  border-bottom-color: var(--border-soft);
+}
+
+.post-body h2 a:hover,
+.post-body h3 a:hover,
+.post-body h4 a:hover {
+  border-bottom-color: var(--yellow);
+}
+
+/* Title emphasis, opt-in via the `!! ... !!` marker. Bumped bigger + bolder
+   and underlined with a thick yellow rule to draw the eye to the title, with
+   no background fill. Works on a wrapped link or plain text. */
+.post-body .title-mark {
+  font-size: 1.15em;
+  font-weight: 900;
+  color: inherit;
+  background: none;
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 0.04em;
+  transition: border-color 0.15s ease;
+}
+
+.post-body .title-mark:hover {
+  border-bottom-color: var(--yellow-deep);
+}
+
+/* A link inside the title carries the title's underline, not its own. */
+.post-body .title-mark a {
+  border-bottom: none;
 }
 
 .post-body strong { color: var(--ink); }
@@ -373,6 +413,107 @@
   display: block;
   border: var(--card-border);
   background: #f0f0f0;
+}
+
+/* Per-image sizing via a `=size` token in the alt text (see .eleventy.js).
+   Sizes are centred so a narrow image sits in the middle of the column.
+   `=wide` breaks out beyond the text column for a panoramic feel; `=full` is
+   the default full content width. */
+.post-body img.img-third { width: 33%; }
+.post-body img.img-half { width: 50%; }
+.post-body img.img-two-thirds { width: 66%; }
+.post-body img.img-full { width: 100%; }
+
+.post-body img.img-third,
+.post-body img.img-half,
+.post-body img.img-two-thirds {
+  margin-inline: auto;
+}
+
+.post-body img.img-wide {
+  width: 100vw;
+  max-width: 1100px;
+  margin-inline: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Collage grid: a `:::collage cols=N` fence. Each image inside is wrapped in a
+   <p> by Markdown, so the grid is over those wrappers. `--collage-cols` (set on
+   the opening line) fixes the column count; without it the grid auto-fits to
+   ~180px cells. Images are resized to fit their cell width and keep their own
+   proportions (whole photo shown, not cropped); `align-items: start` lets rows
+   of differing heights sit naturally. Collapses to fewer columns on phones. */
+.post-body .collage {
+  display: grid;
+  grid-template-columns: repeat(var(--collage-cols, auto-fit), minmax(180px, 1fr));
+  gap: 0.6rem;
+  align-items: start;
+  margin: 1.8rem 0;
+  /* One uniform surface behind the whole collage: a single warm background and
+     card border with padding, so the group reads as one unit. The images
+     themselves drop their individual border/background (set below). */
+  background: var(--surface-warm);
+  border: var(--card-border);
+  padding: 0.6rem;
+}
+
+.post-body .collage > p {
+  margin: 0;
+}
+
+.post-body .collage img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 600px) {
+  .post-body .collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Row mode (`:::collage row`): one justified row where every image shares a
+   fixed height and keeps its own width, so the row has flat top and bottom
+   edges. Overrides the grid display. Each image is given an explicit height and
+   `width: auto`; the flex wrappers grow so the row fills the column width. On
+   phones, fall back to the 2-up grid so narrow images don't get tiny. */
+/* Each cell grows in proportion to its image's aspect ratio (set by the script
+   in base.njk once images load), so the row fills the column edge-to-edge with
+   every image at a shared height and the whole photo shown — no crop. Before the
+   script runs (or with JS off), cells share width equally via `flex: 1`, giving
+   a tidy equal-height-ish fallback row. */
+.post-body .collage-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.post-body .collage-row > p {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.post-body .collage-row img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .post-body .collage-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: initial;
+  }
+  .post-body .collage-row img {
+    height: auto;
+  }
 }
 
 .post-body figure {
@@ -432,6 +573,9 @@
 }
 
 .post-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 2.8rem;
   padding-top: 1.8rem;
   border-top: 1.5px dashed var(--border-soft);

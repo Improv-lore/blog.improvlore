@@ -165,6 +165,27 @@
         if (!e.target.closest(".site-header")) setOpen(false);
       });
     })();
+
+    // Justified collage rows (`:::collage row`). To fill the row edge-to-edge
+    // without cropping, each image's flex item must grow in proportion to the
+    // image's aspect ratio — which we only know once the image has loaded. For
+    // every image in a `.collage-row`, set its <p> wrapper's flex-grow to the
+    // natural width/height ratio. Flexbox then lays the row out so all images
+    // share a height and the widths fill the column. Without JS the CSS
+    // fallback (equal height, natural widths) still gives a tidy row.
+    (function () {
+      const apply = (img) => {
+        const cell = img.closest(".collage-row > p");
+        if (!cell || !img.naturalWidth || !img.naturalHeight) return;
+        const ratio = img.naturalWidth / img.naturalHeight;
+        cell.style.flexGrow = ratio.toFixed(4);
+        cell.style.flexBasis = "0";
+      };
+      document.querySelectorAll(".collage-row img").forEach((img) => {
+        if (img.complete) apply(img);
+        else img.addEventListener("load", () => apply(img), { once: true });
+      });
+    })();
   </script>
 
   <script src="/assets/shouts.js" defer></script>
