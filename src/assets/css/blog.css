@@ -1,0 +1,483 @@
+/* =================================================
+   BLOG: post listing cards, the article page, tags.
+   Built on the shared tokens in base.css so the blog
+   reads as a continuation of improvlore.com.
+   ================================================= */
+
+/* -------------------------------------------------
+   BLOG HERO (listing + tag pages)
+------------------------------------------------- */
+
+.blog-hero {
+  margin: 0 0 2rem;
+}
+
+.blog-hero .home-hero-heading {
+  margin: 0;
+}
+
+.blog-hero-back {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.blog-hero-back:hover {
+  color: var(--ink);
+  border-bottom-color: var(--yellow);
+}
+
+/* -------------------------------------------------
+   POST CARDS (listing + tag grids)
+------------------------------------------------- */
+
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+}
+
+.post-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card-bg-vert);
+  overflow: hidden;
+}
+
+/* Stretched-link card: the title link's ::before covers the whole card so a tap
+   anywhere opens the post. Matches the event-card pattern on the main site. */
+.post-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.post-card-media {
+  display: block;
+  line-height: 0;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.post-card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.post-card:hover .post-card-media img {
+  transform: scale(1.04);
+}
+
+.post-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem 1.4rem 1.4rem;
+  flex: 1;
+}
+
+.post-card-badge {
+  align-self: flex-start;
+  margin: 0;
+  color: #c9a100;
+}
+
+.post-card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (min-width: 900px) {
+  .post-card-title { font-size: 1.45rem; }
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.post-meta-sep {
+  opacity: 0.6;
+}
+
+.post-card-excerpt {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #444;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-more {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* Featured (latest) card: full-width, image and body side by side on desktop. */
+.post-card--feature {
+  margin: 0;
+}
+
+@media (min-width: 760px) {
+  .post-card--feature {
+    flex-direction: row;
+  }
+
+  .post-card--feature .post-card-media {
+    flex: 1 1 52%;
+    min-width: 0;
+  }
+
+  .post-card--feature .post-card-media img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .post-card--feature .post-card-body {
+    flex: 1 1 48%;
+    justify-content: center;
+    padding: 1.8rem 2rem;
+  }
+
+  .post-card--feature .post-card-title {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .post-card--feature .post-card-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* -------------------------------------------------
+   ARTICLE PAGE
+------------------------------------------------- */
+
+.post {
+  max-width: 900px;
+}
+
+@media (min-width: 900px) {
+  /* The article reads as a single column even on wide screens, unlike the
+     full-bleed listing. Re-cap the width and re-centre it. */
+  .post.events-root {
+    max-width: 900px;
+    margin: 1.5rem auto 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .post.events-root {
+    max-width: 1000px;
+  }
+}
+
+.post-back {
+  display: inline-block;
+  margin-bottom: 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.post-back:hover {
+  color: var(--ink);
+  border-bottom-color: var(--yellow);
+}
+
+.post-cover {
+  margin: 0 0 1.8rem;
+  border: var(--card-border);
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.post-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.post-cover figcaption {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  padding: 0.6rem 0.9rem;
+  background: var(--surface-warm);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.post-header {
+  margin: 0 0 1.8rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: #eaf0fe;
+  border: 1px solid #cfddfb;
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.post-tag:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.post-title {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+}
+
+@media (min-width: 900px) {
+  .post-title { font-size: 2.6rem; }
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* -------------------------------------------------
+   ARTICLE BODY (rendered Markdown)
+------------------------------------------------- */
+
+.post-body {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+@media (min-width: 900px) {
+  .post-body { font-size: 1.1rem; }
+}
+
+.post-body > * + * {
+  margin-top: 1.2rem;
+}
+
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-top: 2.2rem;
+}
+
+.post-body h2 { font-size: 1.6rem; }
+.post-body h3 { font-size: 1.3rem; }
+.post-body h4 { font-size: 1.1rem; }
+
+.post-body a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.25);
+  transition: border-color 0.15s ease;
+}
+
+.post-body a:hover {
+  border-bottom-color: var(--blue);
+}
+
+.post-body strong { color: var(--ink); }
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.4rem;
+}
+
+.post-body li + li {
+  margin-top: 0.4rem;
+}
+
+/* Inline images inside a post (e.g. from dummy.tcdw.org). Full content width,
+   square-cornered with the warm card border, with optional caption via the
+   Markdown image title. */
+.post-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--card-border);
+  background: #f0f0f0;
+}
+
+.post-body figure {
+  margin: 1.8rem 0;
+}
+
+.post-body figure img {
+  margin: 0;
+}
+
+.post-body figcaption {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.post-body blockquote {
+  margin: 1.8rem 0;
+  padding: 0.6rem 1.2rem;
+  border-left: 4px solid var(--yellow);
+  background: var(--surface-warm);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.post-body blockquote p { margin: 0.4rem 0; }
+
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  background: var(--surface-warm);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+}
+
+.post-body pre {
+  background: var(--ink);
+  color: #f5f5f5;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  border-radius: 0;
+}
+
+.post-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.post-body hr {
+  border: none;
+  border-top: 1.5px dashed var(--border-soft);
+  margin: 2.4rem 0;
+}
+
+.post-footer {
+  margin-top: 2.8rem;
+  padding-top: 1.8rem;
+  border-top: 1.5px dashed var(--border-soft);
+}
+
+/* -------------------------------------------------
+   TAG INDEX
+------------------------------------------------- */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--card-bg);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tag-chip:hover {
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-yellow);
+}
+
+.tag-chip-count {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--pill-yellow);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  min-width: 1.5rem;
+  text-align: center;
+}

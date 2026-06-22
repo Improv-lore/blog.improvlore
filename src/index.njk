@@ -1,0 +1,84 @@
+---
+layout: base.njk
+title: Improv Lore Blog
+---
+{# Post listing. The newest post leads as a wide feature card; the rest fall
+   into the two-column grid the main site uses for events. A post card is a
+   stretched-link card: tap anywhere on it to open the post. #}
+{% set posts = collections.post | reverse %}
+
+<div class="events-root">
+  <section class="blog-hero" aria-labelledby="blog-hero-heading">
+    <p class="home-hero-eyebrow">The Improv Lore Blog</p>
+    <h1 class="home-hero-heading" id="blog-hero-heading">Notes from the stage.</h1>
+    <p class="home-hero-lede">Stories, lessons, and behind-the-scenes from our shows, jams, and workshops. No script here either.</p>
+  </section>
+
+  {% if posts | length == 0 %}
+  <div class="empty-state">
+    <h2>Nothing here yet</h2>
+    <p>The first post is on its way. Check back soon.</p>
+  </div>
+  {% else %}
+
+  {% set featured = posts[0] %}
+  <section class="page-section" aria-label="Latest post">
+    <article class="post-card post-card--feature surface-card">
+      {% if featured.data.cover %}
+      <a class="post-card-media" href="{{ featured.url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ featured.data.cover }}" alt="" loading="eager"{% if 'http' in featured.data.cover %} eleventy:ignore{% endif %}>
+      </a>
+      {% endif %}
+      <div class="post-card-body">
+        {% if featured.data.tags %}
+        <span class="event-type-badge post-card-badge">{{ featured.data.tags | displayTag }}</span>
+        {% endif %}
+        <h2 class="post-card-title">
+          <a class="post-card-link" href="{{ featured.url }}">{{ featured.data.title }}</a>
+        </h2>
+        <p class="post-card-meta">
+          <time datetime="{{ featured.date | isoDate }}">{{ featured.date | readableDate }}</time>
+          <span class="post-meta-sep" aria-hidden="true">·</span>
+          <span>{{ featured.templateContent | readingTime }} min read</span>
+        </p>
+        <p class="post-card-excerpt">{{ featured.data.description or (featured.templateContent | excerpt(220)) }}</p>
+        <span class="post-card-more">Read post →</span>
+      </div>
+    </article>
+  </section>
+
+  {% if posts | length > 1 %}
+  <section class="page-section" aria-label="More posts">
+    <h2 class="section-heading"><span>More posts</span></h2>
+    <ul class="post-grid">
+      {% for post in posts.slice(1) %}
+      <li>
+        <article class="post-card surface-card">
+          {% if post.data.cover %}
+          <a class="post-card-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ post.data.cover }}" alt="" loading="lazy"{% if 'http' in post.data.cover %} eleventy:ignore{% endif %}>
+          </a>
+          {% endif %}
+          <div class="post-card-body">
+            {% if post.data.tags %}
+            <span class="event-type-badge post-card-badge">{{ post.data.tags | displayTag }}</span>
+            {% endif %}
+            <h3 class="post-card-title">
+              <a class="post-card-link" href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+              <span class="post-meta-sep" aria-hidden="true">·</span>
+              <span>{{ post.templateContent | readingTime }} min read</span>
+            </p>
+            <p class="post-card-excerpt">{{ post.data.description or (post.templateContent | excerpt(140)) }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% endif %}
+</div>

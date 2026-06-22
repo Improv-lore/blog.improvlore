@@ -1,0 +1,64 @@
+---
+layout: base.njk
+ogType: article
+eleventyComputed:
+  # Built here (not in the body) so the value propagates up to base.njk's <head>;
+  # a {% set %} in the template body would not be visible to the parent layout.
+  jsonLd: >-
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ title | dump | safe }},
+      "datePublished": "{{ page.date | isoDate }}",
+      "dateModified": "{{ page.date | isoDate }}",
+      "author": { "@type": "Organization", "name": "Improv Lore" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Improv Lore",
+        "logo": { "@type": "ImageObject", "url": "{{ site.absUrl('/assets/icon-512.png') }}" }
+      },
+      "mainEntityOfPage": "{{ site.absUrl(page.url) }}"{% if cover %},
+      "image": "{{ site.absUrl(cover) }}"{% endif %}
+    }
+---
+{# A post renders inside the events-root shell (same container the main site
+   uses) so the frosted background and gutters line up. Cover image, then a
+   title block with byline + tags, then the rendered Markdown body. #}
+{% set canonicalUrl = page.url %}
+
+<article class="events-root post">
+  <a class="post-back" href="/">← All posts</a>
+
+  {% if cover %}
+  <figure class="post-cover">
+    <img src="{{ cover }}" alt="{{ coverAlt or title }}" loading="eager" fetchpriority="high"{% if 'http' in cover %} eleventy:ignore{% endif %}>
+    {% if coverCaption %}<figcaption>{{ coverCaption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
+  <header class="post-header">
+    {% if tags %}
+    <ul class="post-tags" aria-label="Topics">
+      {% for tag in tags %}{% if tag not in ["post", "posts", "all"] %}
+      <li><a class="post-tag" href="/tags/{{ tag | slugify }}/">{{ tag }}</a></li>
+      {% endif %}{% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1 class="post-title">{{ title }}</h1>
+
+    <p class="post-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      <span class="post-meta-sep" aria-hidden="true">·</span>
+      <span>{{ content | readingTime }} min read</span>
+    </p>
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <a class="btn btn-primary" href="/">← Back to all posts</a>
+  </footer>
+</article>

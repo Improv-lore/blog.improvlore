@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: Topics — Improv Lore Blog
+permalink: /tags/
+pageDescription: Browse Improv Lore blog posts by topic.
+---
+{# Tag index: one chip per topic, sized by how many posts carry it. #}
+{% set tags = collections | postTags %}
+
+<div class="events-root">
+  <section class="blog-hero" aria-labelledby="tags-heading">
+    <p class="home-hero-eyebrow">Improv Lore Blog</p>
+    <h1 class="home-hero-heading" id="tags-heading">Topics</h1>
+    <p class="home-hero-lede">Every subject we've written about. Pick one to see the posts.</p>
+  </section>
+
+  <section class="page-section">
+    {% if tags | length == 0 %}
+    <div class="empty-state">
+      <h2>No topics yet</h2>
+      <p>Tags will appear here once posts are published.</p>
+    </div>
+    {% else %}
+    <ul class="tag-cloud">
+      {% for tag in tags %}
+      {% set count = (collections[tag] | length) %}
+      <li>
+        <a class="tag-chip" href="/tags/{{ tag | slugify }}/">
+          {{ tag }}<span class="tag-chip-count">{{ count }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+</div>

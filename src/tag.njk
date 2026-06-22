@@ -1,0 +1,54 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+  addAllPagesToCollections: false
+permalink: "/tags/{{ tag | slugify }}/"
+eleventyComputed:
+  title: "{{ tag }} — Improv Lore Blog"
+  pageDescription: "Improv Lore blog posts tagged {{ tag }}."
+---
+{# One page per tag. `tag` is the current tag name; collections[tag] is its
+   posts. Same card grid as the home listing. #}
+{% set posts = collections[tag] | reverse %}
+
+<div class="events-root">
+  <section class="blog-hero" aria-labelledby="tag-heading">
+    <p class="home-hero-eyebrow"><a class="blog-hero-back" href="/tags/">Topics</a></p>
+    <h1 class="home-hero-heading" id="tag-heading">{{ tag }}</h1>
+    <p class="home-hero-lede">{{ posts | length }} post{% if posts | length != 1 %}s{% endif %} tagged “{{ tag }}”.</p>
+  </section>
+
+  <section class="page-section">
+    <ul class="post-grid">
+      {% for post in posts %}
+      <li>
+        <article class="post-card surface-card">
+          {% if post.data.cover %}
+          <a class="post-card-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ post.data.cover }}" alt="" loading="lazy"{% if 'http' in post.data.cover %} eleventy:ignore{% endif %}>
+          </a>
+          {% endif %}
+          <div class="post-card-body">
+            <h2 class="post-card-title">
+              <a class="post-card-link" href="{{ post.url }}">{{ post.data.title }}</a>
+            </h2>
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+              <span class="post-meta-sep" aria-hidden="true">·</span>
+              <span>{{ post.templateContent | readingTime }} min read</span>
+            </p>
+            <p class="post-card-excerpt">{{ post.data.description or (post.templateContent | excerpt(140)) }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
