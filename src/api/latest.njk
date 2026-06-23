@@ -1,0 +1,25 @@
+---
+permalink: /api/latest.json
+eleventyExcludeFromCollections: true
+# A tiny build-time JSON "API": the newest post as an object the main site (or
+# anyone) can fetch to render a "latest from the blog" card. The `post`
+# collection is oldest-first, so the last item is the latest. Output is JSON via
+# `dump`, with absolute URLs so external consumers get usable links. Regenerated
+# on every build, so it always points at the most recent post.
+---
+{%- set latest = collections.post | last -%}
+{%- if latest -%}
+{
+  "url": {{ site.absUrl(latest.url) | dump | safe }},
+  "title": {{ latest.data.title | dump | safe }},
+  "date": "{{ latest.date | isoDate }}",
+  "excerpt": {{ latest.templateContent | excerpt | dump | safe }},
+  "cover": {% if latest.data.cover %}{{ site.absUrl(latest.data.cover) | dump | safe }}{% else %}null{% endif %},
+  "coverAlt": {{ (latest.data.coverAlt or latest.data.title) | dump | safe }},
+  "tags": {{ (latest.data.tags | cleanTags) | dump | safe }},
+  "author": {{ (latest.data.author or "Improv Lore") | dump | safe }}{% if latest.data.authorUrl %},
+  "authorUrl": {{ latest.data.authorUrl | dump | safe }}{% endif %}
+}
+{%- else -%}
+{}
+{%- endif -%}

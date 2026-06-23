@@ -290,6 +290,79 @@
   .post-title { font-size: 2.6rem; }
 }
 
+/* A single "Photos by …" credit for the whole post, sitting just above the
+   footer buttons. Muted to match the byline; the link, if any, underlines. */
+.post-photo-credit {
+  margin: 1.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.post-photo-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-photo-credit a:hover {
+  color: var(--text-body);
+}
+
+/* Lightbox overlay (see base.njk). Fixed full-screen dim backdrop centring the
+   enlarged image; `hidden` toggles visibility. The image is capped to the
+   viewport so it never overflows, and the close button sits top-right.
+   The `:not()` pairs match motifs.css's blanket `body > *:not(.page-motifs)
+   :not(.page-frost)` rule and add the `.lightbox` class on top, so this wins on
+   specificity — otherwise that rule forces the overlay to position: relative /
+   z-index: 1 and it drops into normal flow, off-screen. z-index sits above the
+   site header (30). */
+body > .lightbox:not(.page-motifs):not(.page-frost) {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.9);
+  cursor: zoom-out;
+}
+
+body > .lightbox[hidden]:not(.page-motifs):not(.page-frost) {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 .post-meta {
   display: flex;
   align-items: center;
@@ -413,6 +486,7 @@
   display: block;
   border: var(--card-border);
   background: #f0f0f0;
+  cursor: zoom-in;
 }
 
 /* Per-image sizing via a `=size` token in the alt text (see .eleventy.js).

@@ -62,6 +62,12 @@ eleventyComputed:
     {{ content | safe }}
   </div>
 
+  {% if photoCredit %}
+  <p class="post-photo-credit">Photos by
+    {% if photoCreditUrl %}<a href="{{ photoCreditUrl }}"{% if 'http' in photoCreditUrl %} target="_blank" rel="noopener"{% endif %}>{{ photoCredit }}</a>{% else %}{{ photoCredit }}{% endif %}
+  </p>
+  {% endif %}
+
   <footer class="post-footer">
     <a class="btn btn-primary" href="/">← Back to all posts</a>
     <a class="btn btn-secondary" href="{{ site.mainSite }}/events/" target="_blank" rel="noopener">Check out our upcoming events →</a>

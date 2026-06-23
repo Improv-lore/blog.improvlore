@@ -252,6 +252,11 @@ export default function(eleventyConfig) {
     // The bookkeeping tags that aren't real topics.
     const TAG_NOISE = new Set(["all", "post", "posts"]);
 
+    // All real topic tags on a post, minus the bookkeeping ones (for the JSON API).
+    eleventyConfig.addFilter("cleanTags", (tags) =>
+        (tags || []).filter((t) => !TAG_NOISE.has(t))
+    );
+
     // First real topic tag on a post, for the badge on listing cards.
     eleventyConfig.addFilter("displayTag", (tags) =>
         (tags || []).find((t) => !TAG_NOISE.has(t)) || "Post"
