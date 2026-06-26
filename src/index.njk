@@ -81,4 +81,44 @@ title: Improv Lore Blog
   {% endif %}
 
   {% endif %}
+
+  {# From the Community: a short strip of republished posts — pieces from other
+     writers, re-hosted here. Cards open the on-site page; the button links to
+     the full /community/ page. #}
+  {% set community = collections.community | reverse %}
+  {% if community | length > 0 %}
+  <section class="page-section" aria-label="From the Community">
+    <h2 class="section-heading"><span>From the Community</span></h2>
+    <ul class="post-grid">
+      {% for post in community.slice(0, 4) %}
+      <li>
+        <article class="post-card surface-card">
+          {% if post.data.cover %}
+          <a class="post-card-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ post.data.cover }}" alt="" loading="lazy"{% if 'http' in post.data.cover %} eleventy:ignore{% endif %}>
+          </a>
+          {% endif %}
+          <div class="post-card-body">
+            <span class="event-type-badge post-card-badge">Community</span>
+            <h3 class="post-card-title">
+              <a class="post-card-link" href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+              {% if post.data.originalAuthor %}
+              <span class="post-meta-sep" aria-hidden="true">·</span>
+              <span>by {{ post.data.originalAuthor }}</span>
+              {% endif %}
+            </p>
+            <p class="post-card-excerpt">{{ post.data.description or (post.templateContent | excerpt(140)) }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="archive-link-row">
+      <a class="btn btn-secondary" href="/community/">See all community posts →</a>
+    </p>
+  </section>
+  {% endif %}
 </div>

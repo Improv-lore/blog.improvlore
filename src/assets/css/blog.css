@@ -199,6 +199,52 @@
   }
 }
 
+/* Row holding the "Browse the full archive" button under the homepage strip. */
+.archive-link-row {
+  margin: 1.6rem 0 0;
+}
+
+/* Republished banner: sits at the very top of a re-hosted post to flag that the
+   piece first appeared on another writer's own blog, and link back to it. */
+.repost-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 0 0 1.8rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface-warm, #fbf6ec);
+  border: 1px solid var(--border-hairline, #e7ddca);
+  border-left: 4px solid var(--yellow, #ffcf33);
+  border-radius: 8px;
+}
+
+.repost-banner-icon {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #c9a100;
+  flex: none;
+}
+
+.repost-banner-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-body, #444);
+}
+
+.repost-banner-text a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.repost-banner-link {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* -------------------------------------------------
    ARTICLE PAGE
 ------------------------------------------------- */

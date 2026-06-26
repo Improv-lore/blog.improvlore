@@ -1,0 +1,55 @@
+---
+layout: base.njk
+title: From the Community — Improv Lore Blog
+permalink: /community/
+pageDescription: Improv writing from voices across the community, republished on Improv Lore.
+---
+{# From the Community: pieces from other writers' blogs and Substacks,
+   republished here as full posts. Cards link to the on-site page; each post
+   carries a credit banner linking back to the original. #}
+{% set entries = collections.community | reverse %}
+
+<div class="events-root">
+  <section class="blog-hero" aria-labelledby="community-heading">
+    <p class="home-hero-eyebrow">Improv Lore Blog</p>
+    <h1 class="home-hero-heading" id="community-heading">From the Community</h1>
+    <p class="home-hero-lede">Improv writing from voices across the community — republished here, with full credit to the original authors.</p>
+  </section>
+
+  <section class="page-section">
+    {% if entries | length == 0 %}
+    <div class="empty-state">
+      <h2>Nothing here yet</h2>
+      <p>Posts from community writers will gather here over time.</p>
+    </div>
+    {% else %}
+    <ul class="post-grid">
+      {% for post in entries %}
+      <li>
+        <article class="post-card surface-card">
+          {% if post.data.cover %}
+          <a class="post-card-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ post.data.cover }}" alt="" loading="lazy"{% if 'http' in post.data.cover %} eleventy:ignore{% endif %}>
+          </a>
+          {% endif %}
+          <div class="post-card-body">
+            <span class="event-type-badge post-card-badge">Community</span>
+            <h2 class="post-card-title">
+              <a class="post-card-link" href="{{ post.url }}">{{ post.data.title }}</a>
+            </h2>
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+              {% if post.data.originalAuthor %}
+              <span class="post-meta-sep" aria-hidden="true">·</span>
+              <span>by {{ post.data.originalAuthor }}</span>
+              {% endif %}
+            </p>
+            <p class="post-card-excerpt">{{ post.data.description or (post.templateContent | excerpt(140)) }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+</div>

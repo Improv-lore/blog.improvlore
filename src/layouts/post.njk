@@ -27,6 +27,21 @@ eleventyComputed:
 {% set canonicalUrl = page.url %}
 
 <article class="events-root post">
+  {% if republished %}
+  {# Republished post: an earlier piece from another writer's own blog/Substack,
+     re-hosted here. Credit the original author and link back to the source. #}
+  <aside class="repost-banner" role="note">
+    <span class="repost-banner-icon" aria-hidden="true">↻</span>
+    <p class="repost-banner-text">
+      This is an earlier post, originally published
+      {% if originalAuthor %}by
+        {% if originalUrl %}<a href="{{ originalUrl }}" target="_blank" rel="noopener">{{ originalAuthor }}</a>{% else %}{{ originalAuthor }}{% endif %}{% endif %}
+      on {% if originalUrl and not originalAuthor %}<a href="{{ originalUrl }}" target="_blank" rel="noopener">{{ originalSource or "their own blog" }}</a>{% else %}{{ originalSource or "their own blog" }}{% endif %}.
+      {% if originalUrl and originalAuthor %}<a class="repost-banner-link" href="{{ originalUrl }}" target="_blank" rel="noopener">Read the original ↗</a>{% endif %}
+    </p>
+  </aside>
+  {% endif %}
+
   {% if cover %}
   <figure class="post-cover">
     <img src="{{ cover }}" alt="{{ coverAlt or title }}" loading="eager" fetchpriority="high"{% if 'http' in cover %} eleventy:ignore{% endif %}>
