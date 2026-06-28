@@ -73,7 +73,9 @@ body > *:not(.page-motifs):not(.page-frost) {
    overrides the blanket z-index:1 above. The :not() pairs match the specificity
    of the rule above; declared later, so this wins the tie. */
 body > .site-header:not(.page-motifs):not(.page-frost) {
-  z-index: 30;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
 }
 
 .motif {

@@ -116,7 +116,7 @@ export default function(eleventyConfig) {
     // "community" collection below, so they don't mix into the home listing/feed.
     eleventyConfig.addCollection("post", (collectionApi) =>
         collectionApi
-            .getFilteredByGlob("src/posts/*.md")
+            .getFilteredByGlob("src/posts/**/*.md")
             .filter((item) => !item.data.republished)
             .sort((a, b) => a.date - b.date)
     );
@@ -127,7 +127,7 @@ export default function(eleventyConfig) {
     // first by date; templates reverse it for display.
     eleventyConfig.addCollection("community", (collectionApi) =>
         collectionApi
-            .getFilteredByGlob("src/posts/*.md")
+            .getFilteredByGlob("src/posts/**/*.md")
             .filter((item) => item.data.republished)
             .sort((a, b) => a.date - b.date)
     );

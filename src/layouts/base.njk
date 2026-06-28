@@ -76,17 +76,18 @@
     <img class="fg-motif fg-motif-pacman"    src="/assets/icons/pacman-yellow.png" alt="" loading="lazy" decoding="async" eleventy:ignore>
   </div>
 
-  {# Top bar: logo left, nav right. The logo and the last nav item point back at
-     the main improvlore.com site so the blog reads as part of it. #}
+  {# Top bar: logo left, nav right. The logo points at the blog home; the last
+     nav item points back at the main improvlore.com site so the blog reads as
+     part of it. #}
   {% set navLinks = [
-    { url: "/", label: "Blog" },
     { url: "/tags/", label: "Topics" },
     { url: "/community/", label: "Community" },
     { url: site.mainSite, label: "improvlore.com ↗", external: true }
   ] %}
   <header class="site-header" role="banner">
-    <a class="site-header-logo" href="{{ site.mainSite }}" aria-label="Improv Lore home page">
+    <a class="site-header-logo" href="/" aria-label="Improv Lore blog home page">
       <img class="hero-logo" src="/assets/logo.png" alt="Improv Lore" width="245" height="36" eleventy:ignore>
+      <span class="site-header-tagline">Blog</span>
     </a>
     <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <span class="site-nav-toggle-bars" aria-hidden="true"></span>
