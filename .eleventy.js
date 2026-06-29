@@ -67,6 +67,21 @@ export default function(eleventyConfig) {
         dateToRfc3339(d instanceof Date ? d : new Date(d))
     );
 
+    // A social-card-sized variant of a cover image for og:image / twitter:image.
+    // Originals on img.improvlore.com can be multi-megabyte PNGs, which social
+    // scrapers (WhatsApp, Facebook, X, LinkedIn) refuse to fetch or silently
+    // drop. That host is Cloudflare-backed and supports Image Resizing, so we
+    // route the URL through /cdn-cgi/image/ to get a ~1200×630 JPEG that's a few
+    // hundred KB at most. Non-img.improvlore.com or already-resized URLs (and
+    // local paths) are returned untouched.
+    eleventyConfig.addFilter("ogCard", (url) => {
+        if (!url) return url;
+        const m = /^https?:\/\/img\.improvlore\.com\/(.+)$/i.exec(url);
+        if (!m || url.includes("/cdn-cgi/image/")) return url;
+        const opts = "width=1200,height=630,fit=cover,quality=80,format=auto";
+        return `https://img.improvlore.com/cdn-cgi/image/${opts}/${m[1]}`;
+    });
+
     // Newest first, for the post listing and the feed.
     eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
 

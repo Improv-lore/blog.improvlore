@@ -12,9 +12,19 @@
   <meta property="og:url" content="{{ site.absUrl(page.url) }}">
   <meta property="og:site_name" content="{{ site.name }}">
   {% set ogImage = pageImage or cover or "/assets/logo.png" %}
-  <meta property="og:image" content="{{ site.absUrl(ogImage) }}">
+  {% set ogImageUrl = site.absUrl(ogImage) | ogCard %}
+  <meta property="og:image" content="{{ ogImageUrl }}">
+  <meta property="og:image:alt" content="{{ coverAlt or title }}">
+  {%- if (pageImage or cover) and 'img.improvlore.com' in ogImageUrl %}
+  {# ogCard forces a 1200×630 card crop for img.improvlore.com covers, so the
+     declared dimensions are exact. Skipped for the logo fallback / other hosts. #}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {%- endif %}
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta name="twitter:card" content="{% if pageImage or cover %}summary_large_image{% else %}summary{% endif %}">
+  <meta name="twitter:image" content="{{ ogImageUrl }}">
+  <meta name="twitter:image:alt" content="{{ coverAlt or title }}">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
