@@ -40,7 +40,24 @@ Each Silliest Show is different from the one before it, because we like our New 
 ### Next, we had our ***licensed*** !![TheatreSports™](https://improvlore.com/event/the-great-face-off/)!!
 @ Sat, 27th June
 
-(photos to be added)
+:::collage
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/87a49dcd6bb1453caada6a48f27da172/revisions/b199723048894b2aada3bfc2cb6b0c07/renditions/b4212fba8dd0a4128d8e64befc06e488)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/776bc95929554e7ea9a95fb89720c44a/revisions/f75bc444f97548c794934b4a5f43349c/renditions/c524cc7d0064079262c1b1afb350d509)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/79ed68795f184465b9763ab2cebb935e/revisions/0f59d12bf9ab466dbe5640bae3a91209/renditions/243c95dddd05bbeb21fd5c78a0faa9c0)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/2b689572ca484b6887ce5f96ca84947c/revisions/b7f919f2d24b42feb716abf70cc3f806/renditions/0ed2ccad51703544477cd42f4fc23151)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/7e6e9d4dcae04c74b60bb5fbb966ff8b/revisions/fc913271102b4523982472ef9c4b5990/renditions/30a1ddbfab9c581393382caa36aad0aa)
+
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/b038057d82614b05b40e05fcab74d407/revisions/793bac14630e4352830e3443d8f813d0/renditions/5b6271a0077a5070bd3ac0cc08f9159e)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/85fe18d78aab4559b710c9f6ac0f224a/revisions/165a63e526e246dd877e9f8a7a183126/renditions/e1e17e24a7405c57be615b668cca2181)
+
+![img =half](https://lightroom.adobe.com/v2c/spaces/54c2f55c1a404681a19f43b043a8c6ee/assets/660277d0d75a48fab8670345ba32806a/revisions/d16656cfebde45e69629204f24535669/renditions/5e763ca326ca0a24ee62856a92aa70ae)
+:::
 
 If you've never watched Lagaan or Gangs of Wasseypur before, it's a good thing you skipped this show - the spoilers were brutal! 
 This weekend we had teams take on each other to win points and the love of the audience, by coming out on top in a series of tireless challenges. From reality TV to talking degrees, from emotional road trips to diss tracks about the opponents - we made them all up on the spot!
