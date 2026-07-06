@@ -51,6 +51,26 @@ export default function(eleventyConfig) {
         },
     });
 
+    // Normalize remote post photos (img.improvlore.com) to a uniform 4:3 frame
+    // via Cloudflare Image Resizing. Originals are full-resolution phone photos
+    // of wildly varying orientation and size; left alone they load slowly and
+    // make collage rows ragged (a tall portrait next to a wide landscape). This
+    // HTML transform runs after render and rewrites every img.improvlore.com
+    // <img src> — cover and body alike — to a 1000×750 fit=cover JPEG/WebP, so
+    // every photo shares the same shape and rows read evenly. Already-resized
+    // URLs (/cdn-cgi/image/) and other hosts are left untouched.
+    eleventyConfig.addTransform("resizeRemotePhotos", function (content) {
+        if (!(this.page.outputPath || "").endsWith(".html")) return content;
+        return content.replace(
+            /(<img\b[^>]*?\bsrc=")(https?:\/\/img\.improvlore\.com\/)([^"]+)(")/gi,
+            (full, pre, host, path, post) => {
+                if (path.startsWith("cdn-cgi/image/")) return full;
+                const opts = "width=1000,height=750,fit=cover,quality=80,format=auto";
+                return `${pre}${host}cdn-cgi/image/${opts}/${path}${post}`;
+            }
+        );
+    });
+
     // ---- Date helpers --------------------------------------------------------
     // Posts carry an ISO `date` in front matter. Render it as a friendly label
     // for the byline, and as an ISO machine date for <time datetime>.
