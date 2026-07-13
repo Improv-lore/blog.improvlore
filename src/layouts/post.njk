@@ -2,16 +2,20 @@
 layout: base.njk
 ogType: article
 eleventyComputed:
+  # One normalized [{name, url}] list drives both the byline and the JSON-LD
+  # below, so single- and multi-author posts render consistently.
+  authorList: "{{ authors | authorList(author, authorUrl) | dump | safe }}"
   # Built here (not in the body) so the value propagates up to base.njk's <head>;
   # a {% set %} in the template body would not be visible to the parent layout.
   jsonLd: >-
+    {% set people = authors | authorList(author, authorUrl) %}
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": {{ title | dump | safe }},
       "datePublished": "{{ page.date | isoDate }}",
       "dateModified": "{{ page.date | isoDate }}",
-      "author": {% if author %}{ "@type": "Person", "name": {{ author | dump | safe }}{% if authorUrl %}, "url": {{ authorUrl | dump | safe }}{% endif %} }{% else %}{ "@type": "Organization", "name": "Improv Lore" }{% endif %},
+      "author": {% if people.length %}[{% for p in people %}{ "@type": "Person", "name": {{ p.name | dump | safe }}{% if p.url %}, "url": {{ p.url | dump | safe }}{% endif %} }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@type": "Organization", "name": "Improv Lore" }{% endif %},
       "publisher": {
         "@type": "Organization",
         "name": "Improv Lore",
@@ -61,10 +65,12 @@ eleventyComputed:
     <h1 class="post-title">{{ title }}</h1>
 
     <p class="post-meta">
-      {% if author %}
-      <span class="post-author">Written by
-        {% if authorUrl %}<a class="post-author-link" href="{{ authorUrl }}"{% if 'http' in authorUrl %} target="_blank" rel="noopener"{% endif %}>{{ author }}</a>{% else %}{{ author }}{% endif %}
-      </span>
+      {% set people = authors | authorList(author, authorUrl) %}
+      {% if people.length %}
+      <span class="post-author">Written by{% for p in people %}
+          {%- if loop.first %} {% elif loop.last %}{% if people.length > 2 %},{% endif %} and {% else %}, {% endif -%}
+          {%- if p.url %}<a class="post-author-link" href="{{ p.url }}"{% if 'http' in p.url %} target="_blank" rel="noopener"{% endif %}>{{ p.name }}</a>{% else %}{{ p.name }}{% endif -%}
+        {% endfor %}</span>
       <span class="post-meta-sep" aria-hidden="true">·</span>
       {% endif %}
       <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>

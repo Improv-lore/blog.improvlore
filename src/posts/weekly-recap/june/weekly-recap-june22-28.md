@@ -24,7 +24,7 @@ This week was full of Stage, high spirits and challenges.
 Spontaneity, storytelling, stage presence, and spirit are some of the key ingredients of a watertight presentation. this time, we made friends with PowerPoint, giving our participants a glimpse into the improviser's mind as we present from slides we've never seen before, on topics given to us in the moment.
 
 
-### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/siiliest)!!
+### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/silliest)!!
 @ Fri, 26th June.
 
 :::collage 

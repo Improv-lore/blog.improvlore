@@ -25,7 +25,7 @@ Whimsical Wednesdays are close to our hearts. They're our longest-running event,
 
 
 
-### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/siiliest)!!
+### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/silliest)!!
 @ Fri, 19th June.
 
 :::collage cols=2

@@ -51,21 +51,22 @@ export default function(eleventyConfig) {
         },
     });
 
-    // Normalize remote post photos (img.improvlore.com) to a uniform 4:3 frame
-    // via Cloudflare Image Resizing. Originals are full-resolution phone photos
-    // of wildly varying orientation and size; left alone they load slowly and
-    // make collage rows ragged (a tall portrait next to a wide landscape). This
-    // HTML transform runs after render and rewrites every img.improvlore.com
-    // <img src> — cover and body alike — to a 1000×750 fit=cover JPEG/WebP, so
-    // every photo shares the same shape and rows read evenly. Already-resized
-    // URLs (/cdn-cgi/image/) and other hosts are left untouched.
+    // Downsize remote post photos (img.improvlore.com) via Cloudflare Image
+    // Resizing. Originals are full-resolution phone photos that load slowly;
+    // left alone they also bloat the page. This HTML transform runs after render
+    // and rewrites every img.improvlore.com <img src> — cover and body alike —
+    // through /cdn-cgi/image/. We cap both width and height with fit=scale-down,
+    // so photos keep their natural aspect ratio (nothing cropped) but tall/wide
+    // outliers shrink toward a common size instead of towering over neighbours;
+    // collage rows further equalize by sharing a height in CSS. Already-resized
+    // URLs (/cdn-cgi/image/) and other hosts are untouched.
     eleventyConfig.addTransform("resizeRemotePhotos", function (content) {
         if (!(this.page.outputPath || "").endsWith(".html")) return content;
         return content.replace(
             /(<img\b[^>]*?\bsrc=")(https?:\/\/img\.improvlore\.com\/)([^"]+)(")/gi,
             (full, pre, host, path, post) => {
                 if (path.startsWith("cdn-cgi/image/")) return full;
-                const opts = "width=1000,height=750,fit=cover,quality=80,format=auto";
+                const opts = "width=1400,height=1050,fit=scale-down,quality=80,format=auto";
                 return `${pre}${host}cdn-cgi/image/${opts}/${path}${post}`;
             }
         );
@@ -86,6 +87,36 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter("dateToRfc3339", (d) =>
         dateToRfc3339(d instanceof Date ? d : new Date(d))
     );
+
+    // Normalize a post's author front matter into a uniform [{name, url}] list,
+    // so the byline and JSON-LD have one source of truth and posts can credit
+    // more than one writer. Accepted front-matter shapes, in priority order:
+    //   authors: [{ name, url }, ...]        ← preferred for multiple authors
+    //   author: "Name"  (+ optional authorUrl)   ← legacy single author
+    //   author: "Name One, Name Two"          ← comma-separated names; a lone
+    //                                            authorUrl only applies when
+    //                                            there's a single name.
+    eleventyConfig.addFilter("authorList", (authors, author, authorUrl) => {
+        if (Array.isArray(authors)) {
+            return authors
+                .map((a) =>
+                    typeof a === "string"
+                        ? { name: a.trim(), url: "" }
+                        : { name: (a.name || "").trim(), url: a.url || "" }
+                )
+                .filter((a) => a.name);
+        }
+        if (typeof author === "string" && author.trim()) {
+            const names = author.split(",").map((n) => n.trim()).filter(Boolean);
+            return names.map((name, i) => ({
+                name,
+                // A single authorUrl can't be attributed to a specific person
+                // when several are listed, so only apply it to a lone author.
+                url: names.length === 1 && i === 0 ? authorUrl || "" : "",
+            }));
+        }
+        return [];
+    });
 
     // A social-card-sized variant of a cover image for og:image / twitter:image.
     // Originals on img.improvlore.com can be multi-megabyte PNGs, which social

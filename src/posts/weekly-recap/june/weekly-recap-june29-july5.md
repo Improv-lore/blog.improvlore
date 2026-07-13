@@ -13,7 +13,7 @@ photoCreditUrl: https://instagram.com/heresmohit
 ---
 
 
-This week was full of whimsical storytelling, improvised "fights" and a full day improv kinda weekend.
+This week was full of whimsical storytelling, improvised fights and a full day improv kinda weekend.
 
 
 
@@ -30,7 +30,7 @@ July started off on the lovely note of sharing personal stories, and watching th
 Finally, we closed on the story of the rat massacre outside the window. Truly bloody!
 
 
-### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/siiliest)!!
+### Next we had our regular !![The Silliest Show Tonight](https://improvlore.com/silliest)!!
 @ Fri, 3rd July.
 
 :::collage 

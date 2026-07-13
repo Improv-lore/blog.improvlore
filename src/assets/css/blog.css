@@ -85,6 +85,17 @@
   transition: transform 0.35s ease;
 }
 
+/* Grid cards: covers vary wildly in aspect ratio, so pin every thumbnail to a
+   uniform 3:2 frame and crop-to-fill. This keeps the listing grid tidy — all
+   cards the same height — regardless of each photo's real proportions. The
+   feature card overrides this below (its image fills a side panel instead). */
+.post-grid .post-card-media img {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 .post-card:hover .post-card-media img {
   transform: scale(1.04);
 }
@@ -277,8 +288,19 @@
 
 .post-cover img {
   width: 100%;
+  /* Cap the cover height so a tall photo reads as a banner rather than filling
+     the screen before the post even starts. Full width, crop-to-fill vertically. */
   height: auto;
+  max-height: 650px;
+  object-fit: cover;
+  object-position: center;
   display: block;
+}
+
+@media (max-width: 600px) {
+  .post-cover img {
+    max-height: 280px;
+  }
 }
 
 .post-cover figcaption {
