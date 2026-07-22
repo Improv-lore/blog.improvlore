@@ -1,6 +1,6 @@
 ---
 title: "Weekly recap #5 (13th July - 19th July)"
-date: 2026-07-19
+date: 2026-07-22
 authors:
   - name: Arjun Mehra
     url: https://instagram.com/loadbasichtml
@@ -12,7 +12,7 @@ coverCaption: That's Mohit (MG on the whatsapp community), playing the dead body
 photoCredit: UC
 photoCreditUrl: https://instagram.com/underline.center
 ---
-
+>With this blog , we have completed a month of writing weekly recaps!🎉
 
 This week was full of Songs, Mystery and Leveling up!
 
