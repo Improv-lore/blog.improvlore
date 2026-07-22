@@ -30,8 +30,9 @@ We've added a new jam to the mix! **'Make an Improv Song'** debuted on the local
 
 It's one thing to read out lyrics to a tune, and another to really perform it - think open arms, loud voices, the rest of room joining in on the chorus. In this session we made 4 line verses and a chorus on the spot, and learnt easy ways to perform them to an audience. It's all about rhyme, rhythm, and real conviction. Personally, I like talk-singing my way through things.
 
-We've got another one coming soon, so keep an eye out for it on our WhatsApp Community. If you think musicals, bathroom singing, humming tunes, or even words are your thing, this is jam I can't recommend enough. Beginner-friendly, no music experience required, no audience or performance pressure - all we'd like is your can-do attitude.
+We've got another one coming soon, so keep an eye out for it on our [WhatsApp Community](https://improvlore.com/whatsapp). If you think musicals, bathroom singing, humming tunes, or even words are your thing, this is jam I can't recommend enough. Beginner-friendly, no music experience required, no audience or performance pressure - all we'd like is your can-do attitude.
 
+>Go watch some of the songs that we improvised on our [instagram](https://improvlore.com/instagram)
 
 ### Next we had our murder mystery episode of !![The Silliest Show Tonight](https://improvlore.com/silliest)!!
 @ Fri, 17th July.
@@ -70,6 +71,6 @@ Give Mantras a go in your real life and see the difference. Repeat 'I know exact
 
 To be fair, I'd love to hear if it didn't make a difference, too. 
 
->Maybe we can chat about it at one of our [events!](improvlore.com/events) See you around.
+>Maybe we can chat about it at one of our [events!](https://improvlore.com/events) See you around.
 
 
