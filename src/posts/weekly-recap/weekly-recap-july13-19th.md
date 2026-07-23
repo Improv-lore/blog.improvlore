@@ -26,11 +26,11 @@ This week was full of Songs, Mystery and Leveling up!
 ![WhatsApp Image 2026-07-05 at 22.37.51 =half](https://img.improvlore.com/uploads/2026-07-19/a746722a-73a7-490e-a3b7-463ad76c84ea.jpg)
 :::
 
-We've added a new jam to the mix! **'Make an Improv Song'** debuted on the local Billboard dedicated to improv jams with great fanfare and good songs. Our resident musician and long time friend, Rohit, took us through the basics of understanding beats and rhythm before we opened up our voices by 'Na na, na na na Na, Na na na Na, Hey Jude'-ing. Goosebumps!
+We've added a new jam to the mix! **Make an Improv Song** debuted on the local Improv Jam Billboard with great fanfare and good songs. Our resident musician and long time friend, Rohit, took us through the basics of understanding beats and rhythm before we opened up our voices by 'Na na, na na na Na, Na na na Na, Hey Jude'-ing. Goosebumps!
 
-It's one thing to read out lyrics to a tune, and another to really perform it - think open arms, loud voices, the rest of room joining in on the chorus. In this session we made 4 line verses and a chorus on the spot, and learnt easy ways to perform them to an audience. It's all about rhyme, rhythm, and real conviction. Personally, I like talk-singing my way through things.
+It's one thing to read out lyrics to a tune, and another to really perform them - think open arms, loud voices, and the rest of the room joining in on the chorus. In this session we made 4-line verses and a chorus on the spot, and learnt easy ways to perform them to an audience. It's all about rhyme, rhythm, and real conviction. Personally, I like talk-singing my way through things.
 
-We've got another one coming soon, so keep an eye out for it on our [WhatsApp Community](https://improvlore.com/whatsapp). If you think musicals, bathroom singing, humming tunes, or even words are your thing, this is jam I can't recommend enough. Beginner-friendly, no music experience required, no audience or performance pressure - all we'd like is your can-do attitude.
+We've got another one coming soon, so keep an eye out for it on our [WhatsApp Community](https://improvlore.com/whatsapp). If you like musicals, bathroom singing, humming tunes, or even if words are your thing, this is a jam I can't recommend enough. Beginner-friendly, no music experience required, and no audience or performance pressure - all we'd like is your can-do attitude.
 
 >Go watch some of the songs that we improvised on our [instagram](https://improvlore.com/instagram)
 
@@ -48,12 +48,11 @@ We've got another one coming soon, so keep an eye out for it on our [WhatsApp Co
 
 Peter wore many hats; he was the guard of his own castle; owned a candy empire; had two estranged adult children; kept questionable company in the local tavernkeep and a torture master; and died under mysterious circumstances. Since the Police Commissioner, alongwith with his henchpeople Righty & Lefty, was unable to make any meaningful progress in the investigation, we saw the introduction of experienced private eye Noses, with her quick-witted sidekick, Poses. (I'm just glad we've ventured out of Ramesh & Suresh territory - IYKYK)
 
-Our final suspects boiled down to estranged adult child #1 Cassandra (who had had enough with the tacky decor of the house); estranged adult child #2 John (famously a failed actor); and, torture master Manjunath (inventor of the famous candy torture chair).
+Our final suspects boiled down to: estranged adult child #1, Cassandra (who had had enough with the tacky decor of the house); estranged adult child #2, John (a failed actor); and, torture master Manjunath (inventor of a candy torture chair).
 
-If you'd like to know who'dunnit, swing by one of our events and we'll tell you. Heh!
+If you'd like to know whodidit, swing by one of our events and we'll tell you. Heh!
 
 Listen, as first time improvised murder-mysteries go, this was a pretty neat one. Poses posed some difficult questions, and Noses sniffed out the culprit.
-
 
 ### Last up we had an [Character Narrative Intensive Course]()
 @ Sat, 18th July and Sun, 19th July
@@ -69,7 +68,7 @@ We're running intensives for our cast members in July and August. In July, we're
 
 Give Mantras a go in your real life and see the difference. Repeat 'I know exactly what to do' in your mind through the day, and notice if there's a shift in the way you approach tasks and people during that period. I'd love to hear if you noticed a difference.
 
-To be fair, I'd love to hear if it didn't make a difference, too. 
+To be fair, I'd love to hear if it didn't make a difference, too.
 
 >Maybe we can chat about it at one of our [events!](https://improvlore.com/events) See you around.
 
