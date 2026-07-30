@@ -24,7 +24,7 @@ This week was full of
 ![image =half](https://img.improvlore.com/uploads/2026-07-30/4ec1680f-8212-4d4e-a61a-5de3d05d50ce.png)
 ![image =half](https://img.improvlore.com/uploads/2026-07-30/70dfc693-a8a2-4c43-851a-eb17e8b31d05.png)
 :::
-This week, we had another edition of Make Friends With The Stage. You’ve heard from us about how these jams go, so, this time, we thought we’d share what one participant, had to say about it:
+This week, we had another edition of Make Friends With The Stage. You’ve heard from us about how these jams go, so, this time, we thought we’d share what one participant, Fathima, had to say about it:
 
 >“…yesterday truly was a pivotal moment for me. Let’s say, If someone might have been watching my life on a screen, they’ll be able to say, THIS is >where things are going to start getting interesting. 
 >
