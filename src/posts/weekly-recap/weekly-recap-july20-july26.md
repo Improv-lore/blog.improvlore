@@ -4,6 +4,8 @@ date: 2026-07-30
 authors:
   - name: Balasree
     url: https://instagram.com/blala_land
+  - name: Keerthana
+    url: https://instagram.com/keerthanas05/
 tags:
   - recap
 cover: https://img.improvlore.com/uploads/2026-07-30/bb196932-7c6d-49ea-b495-4e705aa0a3de.jpg
@@ -13,8 +15,7 @@ photoCredit: UC
 photoCreditUrl: https://instagram.com/underline.center
 ---
 
-This week was full of stagetime, protesttime and characterwork.
-
+This week was full of stage-time, protest-time and character-work.
 
 
 ### Starting with our very special !![Make Friends With The Stage](https://improvlore.com/stage)!!
@@ -28,7 +29,7 @@ This week, we had another edition of Make Friends With The Stage. You’ve heard
 
 >“…yesterday truly was a pivotal moment for me. Let’s say, If someone might have been watching my life on a screen, they’ll be able to say, THIS is >where things are going to start getting interesting. 
 >
->As someone with extreme stage fright, I wasn’t expecting to feel the excitement and peace (especially simultaneously) that I got to experience >yesterday. It was possible only because of the initial activities and ofcourse, the people.“
+>As someone with extreme stage fright, I wasn’t expecting to feel the excitement and peace (especially simultaneously) that I got to experience yesterday. It was possible only because of the initial activities and of course, the people.“
 
 As always, the art of improv is only one part of the equation. What makes our jams truly unforgettable are the people who show up week and week again to face their fears, open their hearts to connection and rediscover their inner playful power. Join us again and be a part of our wonderful community.
 
@@ -39,7 +40,7 @@ As always, the art of improv is only one part of the equation. What makes our ja
 
 Why? Unless you’ve been living under a rock (or a “first world country”) you’d have heard about the massive protests that happened across Delhi (the epicentre), Bangalore and Mumbai (amongst other cities across India) for justice for students who sadly took their lives because of a broken and corrupt education system. Here was our show cancellation announcement:
 
->What a week. We hope you’re taking care of yourselves in this time of unease and change. To help with that, here are Improv Lore’s tips to ~cope~ >hope for freer times.
+>What a week. We hope you’re taking care of yourselves in this time of unease and change. To help with that, here are Improv Lore’s tips to ~cope~ hope for freer times.
 >1. Say Yes And to only verified information and play at the top of your intelligence
 >2. ⁠Support your (protest) scene partners and make them look good.
 >3. ⁠We usually say don’t ask questions but this is a time to ask A LOT of questions.
@@ -59,9 +60,14 @@ The protests were successful - the education minister resigned and there are tal
 :::collage
 ![image =half](https://img.improvlore.com/uploads/2026-07-30/8cfc6246-cee4-4179-a9cb-16924ede53c0.png)
 :::
-(to be written)
+We wrapped the first of our 12-hour intensives (woo!). In the concluding 2 sessions, we continued building Character Narratives (how a character moves, what motivates them, and how they interact with the world). 
+
+Improvisers learned how to use Status in character work. Status is not about how rich, strong or powerful a person is; it’s simply the perceived power dynamic between two characters in a scene. We learned what behaviours and body language cues make a character seem high or low status, and also how to subvert expectations (come watch us play a high-status baby or a low-status monarch next time!). The most challenging exercise of the course - giving and receiving sincere compliments without squirming. Turns out accepting a compliment graciously is a high status move! Hehe, we’re all still working on that.
+
+We also touched on objectives (what your character wants to achieve or how they want to be treated by others in the scene) and endowing your scene partner with motivations. Putting all these tools together, we got scenes like a chocolate bar and milk going on a date, two very stressed-out mafia members, and Spiderman interviewing for a pest control job.
+
+>If these sound like the wacky shenanigans you’d like to see, come on [Friday](https://improvlore.com/events) and watch us bring the Silliest characters to life :)
 
 
->Come next week for one of our [events!](https://improvlore.com/events) See you around.
 
 
