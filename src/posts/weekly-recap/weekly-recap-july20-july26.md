@@ -13,7 +13,7 @@ photoCredit: UC
 photoCreditUrl: https://instagram.com/underline.center
 ---
 
-This week was full of 
+This week was full of stagetime, protesttime and characterwork.
 
 
 
