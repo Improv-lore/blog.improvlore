@@ -27,7 +27,7 @@ This week was full of stage-time, protest-time and character-work.
 :::
 This week, we had another edition of Make Friends With The Stage. You’ve heard from us about how these jams go, so, this time, we thought we’d share what one participant, Fathima, had to say about it:
 
->“…yesterday truly was a pivotal moment for me. Let’s say, If someone might have been watching my life on a screen, they’ll be able to say, THIS is >where things are going to start getting interesting. 
+>“…yesterday truly was a pivotal moment for me. Let’s say, If someone might have been watching my life on a screen, they’ll be able to say, THIS is where things are going to start getting interesting. 
 >
 >As someone with extreme stage fright, I wasn’t expecting to feel the excitement and peace (especially simultaneously) that I got to experience yesterday. It was possible only because of the initial activities and of course, the people.“
 
