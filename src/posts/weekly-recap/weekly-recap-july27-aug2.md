@@ -37,8 +37,8 @@ The audience is an integral part of any improv show and this Friday’s audience
 @ Sunday, 1st August
 
 :::collage 
-![image =half](https://img.improvlore.com/uploads/2026-08-07/5cc2e588-a1b6-4d74-8e7c-dbd40f35443e.png)
-![image =half](https://img.improvlore.com/uploads/2026-08-07/fcb230b3-897f-45b8-a76a-5e6722f28a56.png)
+![WhatsApp Image 2026-08-04 at 14.07.22 =half](https://img.improvlore.com/uploads/2026-08-07/2ea1eb7c-d853-4761-9b60-048e686beb31.jpg)
+![WhatsApp Image 2026-08-04 at 14.07.24 =half](https://img.improvlore.com/uploads/2026-08-07/b726c289-0fdb-418b-9a72-0035f67f7156.jpg)
 :::
 
 > This section was written by MJ (one of our Jam regulars, thanks MJ)
