@@ -8,9 +8,9 @@ authors:
     url: https://instagram.com/keerthanas05/
 tags:
   - recap
-cover: 
+cover: https://img.improvlore.com/uploads/2026-08-14/30c79d34-54f8-4b86-ae84-a7c3648a2ee5.jpg
 coverAlt: group photo
-coverCaption: 
+coverCaption: That's our Judge Setu with the audience and the cast of PPT Roulette 
 photoCredit: UC
 photoCreditUrl: https://instagram.com/underline.center
 ---
