@@ -22,8 +22,8 @@ This week was full of Songs, Mystery and Leveling up!
 @ Wed, 15th July.
 
 :::collage
-![WhatsApp Image 2026-07-05 at 22.37.51 =half](https://img.improvlore.com/uploads/2026-07-19/613b124e-42ef-49b8-bbe3-dbe8e7f8722d.jpg)
-![WhatsApp Image 2026-07-05 at 22.37.51 =half](https://img.improvlore.com/uploads/2026-07-19/a746722a-73a7-490e-a3b7-463ad76c84ea.jpg)
+![WhatsApp Image 2026-07-05 at 22.37.51 =half](https://img.improvlore.com/uploads/2026-08-18/8630802c-995c-4954-90a0-e69bd58dea22.webp)
+
 :::
 
 We've added a new jam to the mix! **Make an Improv Song** debuted on the local Improv Jam Billboard with great fanfare and good songs. Our resident musician and long time friend, Rohit, took us through the basics of understanding beats and rhythm before we opened up our voices by 'Na na, na na na Na, Na na na Na, Hey Jude'-ing. Goosebumps!
