@@ -1,6 +1,6 @@
 ---
 title: "Weekly recap #10 (06th Sept - 12th Sept)"
-date: 2026-09-13
+date: 2026-09-15
 authors:
   - name: Arjun
   - url: https://www.instagram.com/loadbasichtml/
@@ -17,7 +17,7 @@ photoCreditUrl: https://instagram.com/underline.center
 
 We're back from the break feeling refreshed, and we can't wait to have you back with us for everything we've planned for September and October! 
 
-### We started our week back with our hot favourite Make Friends With the Stage. [Make Friends with the stage](https://improvlore.com/musicjam)!!
+We started our week back with our hot favourite ### [Make Friends with the stage](https://improvlore.com/stage)!!
 @ Wednesday, 09th September
 
 :::collage 
