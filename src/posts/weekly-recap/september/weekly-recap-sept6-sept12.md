@@ -134,7 +134,7 @@ We did a 10-person Maestro.
 
 PowerPoint Roulette has got to be one of my favourite formats! There's so much fun stuff going on; there are slides that make no sense, topics that don't match the slide decks, judges who are scoring the quality of the presentation, and finally, an audience that's waiting to grill the improviser with questions about the invented talk.
 
-Sunday's show had Anubha Aunty, ex-business partner of Seema Aunty of Netflix fame, walk us through the essentials of a marriage proposal. Saloni eulogised her fallen dosa, and Pratham gave a wedding toast where he asserted that math has no place in love. And two brave audience members stepped up: Aman, a very reluctant presenter of the breaking news, and Teshu, who travels worldwide (though he has actually never stepped out of the country once).
+Sunday's show had Anubha Aunty, ex-business partner of Seema Aunty of Netflix fame, walk us through the essentials of a marriage proposal. Saloni eulogised her fallen dosa, and Pratham gave a wedding toast where he asserted that math has no place in love. And two brave audience members stepped up: Aman, a very reluctant presenter of the breaking news, and Teshu, who travels worldwide (though she has actually never stepped out of the country once).
 
 The most exciting performers of the evening, though, were the audience. They improvised questions more than the improvisers made up the presentations. Backstories were invented, scandals were made-up, and a disgruntled friend of a disgruntled customer showed up! (All of this, the audience did by themselves. We didn't prep them, we didn't even have to tell them that they can take liberties with the questions. They just did!)
 
