@@ -1,6 +1,6 @@
 ---
 title: "Improv Lore goes to Hong Kong"
-date: 2026-09-15
+date: 2026-09-15T17:30:00+00:00
 authors:
   - name: Arnika Kumar
     url: https://www.instagram.com/noir.arnika/
@@ -59,7 +59,7 @@ Then it was finally time to head to the Fringe Club.
 
 ![IMG_7318 =half](https://img.improvlore.com/uploads/2026-06-26/46ddc585-6ba6-4394-82fc-0210cbbf5fe5.jpg)
 
-## [Yes And Hong Kong International Festivalhttps://www.yesandhk.com/]!
+## [Yes And Hong Kong International Festival](https://www.yesandhk.com/)!
 
 There is something special about arriving at a festival venue and immediately realizing that everyone around you speaks the same strange language. We registered, collected our lanyards and merchandise, decorated everything with stickers, took photographs, and started meeting improvisers from around the world. The atmosphere was equal parts excitement, curiosity, and barely controlled chaos.
 
