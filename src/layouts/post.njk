@@ -49,7 +49,7 @@ eleventyComputed:
   {% if cover %}
   <figure class="post-cover">
     <img src="{{ cover }}" alt="{{ coverAlt or title }}" loading="eager" fetchpriority="high"{% if 'http' in cover %} eleventy:ignore{% endif %}>
-    {% if coverCaption %}<figcaption>{{ coverCaption }}</figcaption>{% endif %}
+    {% if coverCaption %}<figcaption>{{ coverCaption | inlineMarkdown | safe }}</figcaption>{% endif %}
   </figure>
   {% endif %}
 

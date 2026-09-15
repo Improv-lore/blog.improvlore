@@ -27,8 +27,13 @@ export default function(eleventyConfig) {
     // `ignoreRemoteImages` is the one build-only concern: it tags http(s) images
     // with `eleventy:ignore` so the image transform below skips them (posts
     // hotlink remote photos; local images under src/assets/ are still optimised).
-    eleventyConfig.amendLibrary("md", (md) =>
-        improvloreRules(md, { ignoreRemoteImages: true })
+    let markdown;
+    eleventyConfig.amendLibrary("md", (md) => {
+        markdown = md;
+        return improvloreRules(md, { ignoreRemoteImages: true });
+    });
+    eleventyConfig.addFilter("inlineMarkdown", (value) =>
+        markdown.renderInline(String(value || ""))
     );
 
     // Resize and serve modern WebP (with a JPEG fallback) for our own local
